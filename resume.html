@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Darshan Nagaraj — Program Manager | CFA L3 Candidate</title>
+<meta name="description" content="Darshan Nagaraj — Program Manager at Dell Technologies, CFA Level III Candidate, FRM Part II Candidate, MBA Candidate at Masters' Union." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- Reset & Base ---------- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  :root {
+    --bg-0: #05060a;
+    --bg-1: #0a0d14;
+    --bg-2: #0f1320;
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-hover: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --text-0: #f5f7fb;
+    --text-1: #c8cdd9;
+    --text-2: #8a92a6;
+    --accent-1: #00e5ff;     /* cyan */
+    --accent-2: #7c5cff;     /* violet */
+    --accent-3: #ff4ecd;     /* magenta */
+    --accent-glow: rgba(0, 229, 255, 0.35);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --shadow-glow: 0 0 40px rgba(124, 92, 255, 0.18), 0 0 80px rgba(0, 229, 255, 0.08);
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-0);
+    color: var(--text-1);
+    line-height: 1.65;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ---------- Animated Background ---------- */
+  .bg-fx {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 95% 10%, rgba(0, 229, 255, 0.14), transparent 60%),
+      radial-gradient(900px 600px at 50% 110%, rgba(255, 78, 205, 0.10), transparent 60%),
+      var(--bg-0);
+  }
+  .bg-fx::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+    animation: float 18s ease-in-out infinite;
+  }
+  .orb.a { width: 480px; height: 480px; background: #5b3df5; top: -120px; left: -120px; }
+  .orb.b { width: 420px; height: 420px; background: #00b8d9; bottom: -140px; right: -100px; animation-delay: -6s; }
+  .orb.c { width: 360px; height: 360px; background: #ff4ecd; top: 40%; left: 55%; opacity: 0.25; animation-delay: -12s; }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50%      { transform: translate(40px, -30px) scale(1.08); }
+  }
+
+  /* ---------- Layout ---------- */
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 64px 28px 96px;
+  }
+
+  /* ---------- Top Nav ---------- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(5, 6, 10, 0.55);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text-0);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .brand .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent-1);
+    box-shadow: 0 0 12px var(--accent-1);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50%     { transform: scale(1.3); opacity: 0.6; }
+  }
+  .nav { display: flex; gap: 6px; flex-wrap: wrap; }
+  .nav a {
+    font-size: 13.5px;
+    color: var(--text-2);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+  }
+  .nav a:hover {
+    color: var(--text-0);
+    background: var(--surface);
+    border-color: var(--border);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    margin-top: 24px;
+    padding: 56px 44px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow-glow);
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: -1px;
+    border-radius: var(--radius-lg);
+    padding: 1px;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-1);
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 999px;
+    background: rgba(0, 229, 255, 0.05);
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent-1); box-shadow: 0 0 10px var(--accent-1);
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.05;
+    font-weight: 700;
+    color: var(--text-0);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  h1 .gradient {
+    background: linear-gradient(120deg, #00e5ff 0%, #7c5cff 50%, #ff4ecd 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+  }
+  .role {
+    font-size: 18px;
+    color: var(--text-1);
+    margin-bottom: 22px;
+    max-width: 720px;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 10px 18px;
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .meta a { color: var(--text-2); text-decoration: none; transition: color 0.2s; }
+  .meta a:hover { color: var(--accent-1); }
+  .meta span { display: inline-flex; align-items: center; gap: 8px; }
+  .meta svg { width: 16px; height: 16px; opacity: 0.7; }
+
+  .avatar {
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
+    padding: 3px;
+    flex-shrink: 0;
+    animation: spin 12s linear infinite;
+  }
+  .avatar-inner {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: var(--bg-1);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--text-0);
+    animation: spin 12s linear infinite reverse;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 64px; scroll-margin-top: 90px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .section-head .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent-1);
+    letter-spacing: 0.1em;
+  }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 600;
+    color: var(--text-0);
+    letter-spacing: -0.01em;
+  }
+  .section-head .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-strong), transparent);
+  }
+
+  /* ---------- Summary ---------- */
+  .summary {
+    padding: 28px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    color: var(--text-1);
+    line-height: 1.8;
+    position: relative;
+  }
+  .summary::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 20%;
+    width: 3px; height: 60%;
+    background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+    border-radius: 4px;
+  }
+
+  /* ---------- Skills ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .skill-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-1);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12.5px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--text-1);
+    transition: all 0.2s;
+  }
+  .chip:hover {
+    background: rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.3);
+    color: var(--text-0);
+  }
+
+  /* ---------- Experience ---------- */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 18px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent-2), transparent);
+  }
+  .exp-item {
+    position: relative;
+    padding-left: 56px;
+    padding-bottom: 36px;
+  }
+  .exp-item:last-child { padding-bottom: 0; }
+  .exp-item::before {
+    content: "";
+    position: absolute;
+    left: 12px; top: 8px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--bg-0);
+    border: 2px solid var(--accent-1);
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+  .exp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px 28px;
+    transition: all 0.3s;
+  }
+  .exp-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-strong);
+  }
+  .exp-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 8px;
+    margin-bottom: 6px;
+  }
+  .exp-role {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-0);
+  }
+  .exp-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--accent-1);
+    padding: 4px 10px;
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 999px;
+    background: rgba(0, 229, 255, 0.05);
+    white-space: nowrap;
+  }
+  .exp-company {
+    font-size: 14px;
+    color: var(--text-2);
+    margin-bottom: 14px;
+  }
+  .exp-company strong { color: var(--text-1); font-weight: 500; }
+  .exp-list { list-style: none; }
+  .exp-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    font-size: 14.5px;
+    color: var(--text-1);
+    line-height: 1.7;
+  }
+  .exp-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--accent-1);
+    font-size: 12px;
+  }
+
+  /* ---------- Two-column section ---------- */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* ---------- Education / Certs cards ---------- */
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 22px 24px;
+    transition: all 0.3s;
+  }
+  .info-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+  .info-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--text-0);
+    margin-bottom: 4px;
+  }
+  .info-card .sub {
+    font-size: 13.5px;
+    color: var(--text-2);
+    margin-bottom: 6px;
+  }
+  .info-card .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-1);
+  }
+  .stack { display: flex; flex-direction: column; gap: 14px; }
+
+  /* ---------- Awards ---------- */
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .award {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s;
+  }
+  .award:hover {
+    background: var(--surface-hover);
+    border-color: rgba(255, 78, 205, 0.3);
+  }
+  .award-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(124,92,255,0.15), rgba(255,78,205,0.15));
+    border: 1px solid rgba(124, 92, 255, 0.3);
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .award-text { font-size: 13.5px; }
+  .award-text .title { color: var(--text-0); font-weight: 500; }
+  .award-text .sub { color: var(--text-2); font-size: 12px; }
+
+  /* ---------- Languages ---------- */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .lang {
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+  .lang .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--text-0);
+    margin-bottom: 6px;
+  }
+  .lang .level { font-size: 12.5px; color: var(--text-2); margin-bottom: 10px; }
+  .bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+  .bar > span {
+    display: block; height: 100%;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    border-radius: 4px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 13px;
+    color: var(--text-2);
+  }
+  footer .links { display: flex; gap: 12px; }
+  footer a { color: var(--text-2); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--accent-1); }
+
+  /* ---------- Reveal Animations ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px) {
+    .container { padding: 36px 18px 72px; }
+    .hero { padding: 36px 24px; }
+    .hero-grid { grid-template-columns: 1fr; text-align: left; }
+    .avatar { width: 110px; height: 110px; }
+    .avatar-inner { font-size: 36px; }
+    .two-col { grid-template-columns: 1fr; }
+    .nav { display: none; }
+    .exp-item { padding-left: 44px; }
+    .timeline::before { left: 14px; }
+    .exp-item::before { left: 8px; }
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    .bg-fx, .topbar, footer, .avatar { display: none; }
+    body { background: white; color: black; }
+    .hero, .summary, .skill-card, .exp-card, .info-card, .award, .lang {
+      background: white !important;
+      border: 1px solid #ddd !important;
+      box-shadow: none !important;
+      color: black !important;
+    }
+    h1, h2, h3, .exp-role { color: black !important; }
+    h1 .gradient { color: black !important; -webkit-text-fill-color: black; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true">
+  <div class="orb a"></div>
+  <div class="orb b"></div>
+  <div class="orb c"></div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="dot"></span> DN — Resume</div>
+    <nav class="nav" aria-label="Section navigation">
+      <a href="#summary">Summary</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#awards">Awards</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero reveal" aria-label="Introduction">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Available · Bengaluru, India</span>
+        <h1>Darshan <span class="gradient">Nagaraj</span></h1>
+        <p class="role">
+          Program Manager at Dell Technologies bridging technology delivery with deep finance expertise — CFA Level III Candidate, FRM Part II Candidate, and MBA Candidate at Masters' Union.
+        </p>
+        <div class="meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 8 8 5 8-5"/></svg>
+            <a href="mailto:darshannagraj0@gmail.com">darshannagraj0@gmail.com</a>
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M22 21v-7a4 4 0 0 0-8 0v7M14 9h-4v12h4"/></svg>
+            <a href="https://www.linkedin.com/in/darshan-nagaraj-4b677b1a9" target="_blank" rel="noopener">LinkedIn Profile</a>
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bengaluru, Karnataka, India
+          </span>
+        </div>
+      </div>
+      <div class="avatar"><div class="avatar-inner">DN</div></div>
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section id="summary" class="reveal">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>Professional Summary</h2>
+      <span class="line"></span>
+    </div>
+    <p class="summary">
+      Program Manager with <strong style="color:var(--text-0)">4+ years</strong> of experience leading complex, on-site infrastructure deployment programs for Fortune 500 clients at Dell Technologies — currently augmenting deep technical expertise with advanced finance credentials and an MBA at Masters' Union. Proven ability to translate business, technological, and financial requirements into end-to-end program delivery across global, cross-functional teams. Strong advocate for data-driven decision-making, leveraging analytics and interactive visualizations to unlock value, mitigate risk, and influence strategy.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>Core Competencies</h2>
+      <span class="line"></span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Program & Project Mgmt</h3>
+        <div class="chips">
+          <span class="chip">End-to-End Delivery</span>
+          <span class="chip">Stakeholder Mgmt</span>
+          <span class="chip">Risk Mitigation</span>
+          <span class="chip">Cross-Functional Leadership</span>
+          <span class="chip">ITIL® 4</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Finance & Strategy</h3>
+        <div class="chips">
+          <span class="chip">Investment Analysis</span>
+          <span class="chip">Corporate Finance</span>
+          <span class="chip">Financial Modeling</span>
+          <span class="chip">Market Research</span>
+          <span class="chip">Portfolio Mgmt</span>
+          <span class="chip">Risk Management</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Data & Analytics</h3>
+        <div class="chips">
+          <span class="chip">Power BI</span>
+          <span class="chip">Data Storytelling</span>
+          <span class="chip">Dashboards</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">AWS ML</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Technology</h3>
+        <div class="chips">
+          <span class="chip">Dell PowerEdge</span>
+          <span class="chip">Salesforce</span>
+          <span class="chip">Infrastructure Solutions</span>
+          <span class="chip">Cloud & Data Center</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>Professional Experience</h2>
+      <span class="line"></span>
+    </div>
+    <div class="timeline">
+
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div class="exp-role">Program Manager — Infrastructure Solutions Group (ISG)</div>
+            <span class="exp-date">Mar 2022 – Present</span>
+          </div>
+          <div class="exp-company"><strong>Dell Technologies</strong> · West Americas, Global PS · Bengaluru, India</div>
+          <ul class="exp-list">
+            <li>Lead end-to-end program management for on-site infrastructure deployment engagements across Fortune 500 customers in the West Americas region — owning scope, schedule, budget, and stakeholder alignment.</li>
+            <li>Drive cross-functional collaboration with sales, services, engineering, and supply-chain teams to deliver complex multi-site server, storage, and data-center solutions on time and within commercial targets.</li>
+            <li>Translate customer business and technical requirements into structured delivery plans, proactively identifying risks and orchestrating mitigation across global delivery partners.</li>
+            <li>Build Power BI dashboards and reporting frameworks that surface program health, financial performance, and operational KPIs to senior leadership for data-driven decisions.</li>
+            <li>Recognized with multiple internal awards including Bravo (Our Customers, Winning Together, Results, Innovation) and the Delight Award.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div class="exp-role">Project / Program Manager — ISG</div>
+            <span class="exp-date">Jan 2022 – Mar 2022</span>
+          </div>
+          <div class="exp-company"><strong>Dell Technologies</strong> · North-East Americas, Global PS</div>
+          <ul class="exp-list">
+            <li>Managed deployment projects for enterprise customers across the North-East Americas region.</li>
+            <li>Rapidly promoted to Program Manager based on delivery performance and stakeholder feedback.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div class="exp-role">Campus Recruitment / Placement Coordinator</div>
+            <span class="exp-date">Jan 2019 – Aug 2021</span>
+          </div>
+          <div class="exp-company"><strong>B. M. S. College of Engineering</strong> · Bengaluru, India</div>
+          <ul class="exp-list">
+            <li>Coordinated end-to-end placement activities, partnering with 50+ recruiters to align corporate hiring needs with student talent.</li>
+            <li>Organized pre-placement talks, aptitude drives, and interview logistics — building strong industry-academia relationships.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div class="exp-role">Campus Coordinator (BMSCE)</div>
+            <span class="exp-date">Jun 2019 – 2021</span>
+          </div>
+          <div class="exp-company"><strong>CII – Indian Green Building Council (IGBC)</strong></div>
+          <ul class="exp-list">
+            <li>Led on-campus IGBC initiatives promoting sustainable design and green-building practices through workshops and student outreach.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div class="exp-role">Internshala Student Partner (ISP-18)</div>
+            <span class="exp-date">Jun 2020 – Sep 2020</span>
+          </div>
+          <div class="exp-company"><strong>Internshala</strong></div>
+          <ul class="exp-list">
+            <li>Promoted skill-development programs to the student community via campaigns, webinars, and peer outreach.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-card">
+          <div class="exp-head">
+            <div class="exp-role">Green Lifestyle Intern</div>
+            <span class="exp-date">Jun 2018 – Aug 2018</span>
+          </div>
+          <div class="exp-company"><strong>Adamya Chetana</strong></div>
+          <ul class="exp-list">
+            <li>Contributed to sustainability initiatives focused on environmentally responsible community practices.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION + CERTIFICATIONS -->
+  <section class="reveal">
+    <div class="two-col">
+
+      <div id="education">
+        <div class="section-head">
+          <span class="num">04</span>
+          <h2>Education</h2>
+        </div>
+        <div class="stack">
+          <div class="info-card">
+            <h3>Masters' Union</h3>
+            <div class="sub">PGP / MBA</div>
+            <div class="date">Aug 2025 — Oct 2026</div>
+          </div>
+          <div class="info-card">
+            <h3>B. M. S. College of Engineering</h3>
+            <div class="sub">Bachelor of Engineering (B.E.)</div>
+            <div class="date">2017 — 2021</div>
+          </div>
+          <div class="info-card">
+            <h3>IIM Bangalore</h3>
+            <div class="sub">Business Management & Entrepreneurship</div>
+            <div class="date">July 2022</div>
+          </div>
+          <div class="info-card">
+            <h3>HarvardX</h3>
+            <div class="sub">Professional Certificate, Data Science</div>
+            <div class="date">January 2022</div>
+          </div>
+          <div class="info-card">
+            <h3>ETH Zürich</h3>
+            <div class="sub">XSeries Certificate — Future Cities (Architecture)</div>
+            <div class="date">Mar 2020 — Aug 2020</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="certifications">
+        <div class="section-head">
+          <span class="num">05</span>
+          <h2>Certifications</h2>
+        </div>
+        <div class="stack">
+          <div class="info-card">
+            <h3>CFA Program</h3>
+            <div class="sub">Level II Cleared (90%+ ile) · Level I Cleared (90%+ ile)</div>
+            <div class="date">Level III Candidate</div>
+          </div>
+          <div class="info-card">
+            <h3>FRM (GARP)</h3>
+            <div class="sub">Part I Cleared — Score 1211</div>
+            <div class="date">Part II Candidate</div>
+          </div>
+          <div class="info-card">
+            <h3>Corporate Finance</h3>
+            <div class="sub">Specialization Certification</div>
+          </div>
+          <div class="info-card">
+            <h3>Machine Learning Specialization</h3>
+            <div class="sub">Coursera · DeepLearning.AI / Stanford</div>
+          </div>
+          <div class="info-card">
+            <h3>AWS Machine Learning</h3>
+            <div class="sub">Getting Started with AWS ML</div>
+          </div>
+          <div class="info-card">
+            <h3>ITIL® 4 Foundation</h3>
+            <div class="sub">Service Management</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards" class="reveal">
+    <div class="section-head">
+      <span class="num">06</span>
+      <h2>Honors & Awards</h2>
+      <span class="line"></span>
+    </div>
+    <div class="awards-grid">
+      <div class="award">
+        <div class="award-icon">🏆</div>
+        <div class="award-text"><div class="title">Bravo Award</div><div class="sub">"Our Customers" · Dell</div></div>
+      </div>
+      <div class="award">
+        <div class="award-icon">🤝</div>
+        <div class="award-text"><div class="title">Bravo Award</div><div class="sub">"Winning Together" · Dell</div></div>
+      </div>
+      <div class="award">
+        <div class="award-icon">🎯</div>
+        <div class="award-text"><div class="title">Bravo Award</div><div class="sub">"Results" · Dell</div></div>
+      </div>
+      <div class="award">
+        <div class="award-icon">💡</div>
+        <div class="award-text"><div class="title">Bravo Award</div><div class="sub">"Innovation" · Dell</div></div>
+      </div>
+      <div class="award">
+        <div class="award-icon">✨</div>
+        <div class="award-text"><div class="title">Delight Award</div><div class="sub">"Our Customers" · Dell</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section class="reveal">
+    <div class="section-head">
+      <span class="num">07</span>
+      <h2>Languages</h2>
+      <span class="line"></span>
+    </div>
+    <div class="lang-grid">
+      <div class="lang">
+        <div class="name">English</div>
+        <div class="level">Full Professional</div>
+        <div class="bar"><span style="width:95%"></span></div>
+      </div>
+      <div class="lang">
+        <div class="name">Kannada</div>
+        <div class="level">Native / Bilingual</div>
+        <div class="bar"><span style="width:100%"></span></div>
+      </div>
+      <div class="lang">
+        <div class="name">Hindi</div>
+        <div class="level">Native / Bilingual</div>
+        <div class="bar"><span style="width:100%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 Darshan Nagaraj — Crafted with care.</div>
+    <div class="links">
+      <a href="mailto:darshannagraj0@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/darshan-nagaraj-4b677b1a9" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" onclick="window.print();return false;">Print / PDF</a>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // IntersectionObserver for reveal animations
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
